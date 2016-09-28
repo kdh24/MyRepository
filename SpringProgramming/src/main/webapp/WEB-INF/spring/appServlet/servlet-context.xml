@@ -1,28 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans:beans xmlns="http://www.springframework.org/schema/mvc"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xmlns:beans="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
-	
+	<!-- DispatcherServlet Context: defines this servlet's request-processing 
+		infrastructure -->
+
 	<!-- Enables the Spring MVC @Controller programming model -->
-	<annotation-driven />
+	<annotation-driven />	<!-- 어노테이션을 사용해서 객체의 역할을 부여하겠다 -->
+							<!-- 이게 있어야만 패키지 안에서 어노테이션을 통해 컨트롤러를 찾을 수 있다. -->
 
-	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
-	<resources mapping="/resources/**" location="/resources/" />
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving 
+		up static resources in the ${webappRoot}/resources directory -->
+	<resources mapping="/resources/**" location="/resources/" />	<!-- URL로 접근 가능한 위치를 매핑, 이게 있으면 DispatcherServlet을 거치지 않고 바로 resources 폴더로 간다-->
 
-	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
-	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
+		in the /WEB-INF/views directory -->
+	<beans:bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">	<!-- 이게 없으면 jsp파일을 못 찾는다. -->
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
-	
-	<context:component-scan base-package="com.mycompany.myapp" />
-	
-	
-	
+
+	<context:component-scan base-package="com.mycompany.myapp" />	<!-- 컴포넌트(스프링이 관리해야할 객체/ ex.컨트롤러)를 지정한 패키지 내 어디에 있든 하나 하나 다 찾아서 사용하겠다 -->
+																	<!-- 어노테이션을 통해 컴포넌트인지 아닌지 구분한다(@Controller가 붙은 놈은 다 찾는다) -->
+																	<!-- 반드시 저 패키지 안에 있어야만 찾을 수 있다. -->
+
+
+
 </beans:beans>

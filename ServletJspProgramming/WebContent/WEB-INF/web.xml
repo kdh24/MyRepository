@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
-  <display-name>ServletJspProgramming</display-name>
-  <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
-  </welcome-file-list>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	version="3.1">
+	<!-- 서블릿 등록 -->
+	<servlet>
+		<servlet-name>now</servlet-name>
+		<servlet-class>servlet.NowServlet</servlet-class>
+		<init-param>
+			<param-name>location</param-name>
+			<param-value>부산</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>	
+	
+	<!-- 서블릿 URL 매핑 -->
+	<servlet-mapping>
+		<servlet-name>now</servlet-name>
+		<url-pattern>/*</url-pattern>	<!-- url 상에서 /뒤에 뭐가 와도 상관 없다 -->
+	</servlet-mapping>
 </web-app>
