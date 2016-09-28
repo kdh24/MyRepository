@@ -4,11 +4,16 @@
 	<servlet>
 		<servlet-name>now</servlet-name>
 		<servlet-class>servlet.NowServlet</servlet-class>
+		<init-param>
+			<param-name>location</param-name>
+			<param-value>부산</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
 	</servlet>
 	
 	<!-- 서블릿 URL 매핑 -->
 	<servlet-mapping>
 		<servlet-name>now</servlet-name>
-		<url-pattern>/now</url-pattern>
+		<url-pattern>/*</url-pattern>
 	</servlet-mapping>
 </web-app>
