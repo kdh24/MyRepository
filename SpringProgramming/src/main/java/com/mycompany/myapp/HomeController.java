@@ -24,9 +24,4 @@ public class HomeController {
 		return "home";	// 이 이름과 views 폴더의 jsp 파일 이름이 같아야 한다.
 	}
 	
-	@RequestMapping("/news")
-	public String news(){
-		logger.debug("news() 실행");	
-		return "news";
-	}
 }
