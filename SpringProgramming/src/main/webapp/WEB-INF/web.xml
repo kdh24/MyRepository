@@ -9,6 +9,21 @@
 		 마크업 언어의 위치는 schemaLocation에 있다 ~.xsd에 마크업 언어의 설정 내용이 담겨있다 에디터는 이 내용을 참고하여
 		 아래 태그들의 내용들이 올바른지 확인한다. -->
 	
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>/WEB-INF/spring/root-context.xml</param-value>
