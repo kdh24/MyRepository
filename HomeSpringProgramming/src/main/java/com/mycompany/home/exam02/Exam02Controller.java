@@ -16,11 +16,11 @@ public class Exam02Controller {
 	}
 	
 	@RequestMapping("/exam02/join")
-	public String join(String mid, String mname, String mage){
+	public String join(Member member){
 		logger.info("join 요청");
-		logger.info("mid: " + mid);
-		logger.info("mname: " + mname);
-		logger.info("mage: " + mage);
+		logger.info("mid: " + member.getMid());
+		logger.info("mname: " + member.getMname());
+		logger.info("mage: " + member.getMage());
 		return "exam02/index";
 	}
 }
