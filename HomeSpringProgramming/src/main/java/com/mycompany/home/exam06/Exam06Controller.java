@@ -1,4 +1,4 @@
-package com.mycompany.myapp.exam06;
+package com.mycompany.home.exam06;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -7,13 +7,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.mycompany.myapp.exam05.Exam05Controller;
-
 @Controller
 @RequestMapping("/exam06")
 public class Exam06Controller {
-
-	private static final Logger logger = LoggerFactory.getLogger(Exam05Controller.class);
+	
+	private static final Logger logger = LoggerFactory.getLogger(Exam06Controller.class);
 	
 	@RequestMapping("/index")
 	public String index(){
@@ -22,16 +20,16 @@ public class Exam06Controller {
 	}
 	
 	@RequestMapping("/method1")
-	public String method1(HttpServletRequest request) { // 요청 HTTP에 대한 모든 내용이 들어 있는 객체(시작행,
+	public String method1(HttpServletRequest request) {
 		logger.info("method1 요청 처리");
 		logger.info("WebClient IP: " + request.getRemoteAddr());
 		logger.info("WebClient 종류: " + request.getHeader("User-Agent"));
 		if(request.getHeader("User-Agent").contains("Chrome")){
 			logger.info("브라우저 종류: 크롬");
 		}else if(request.getHeader("User-Agent").contains("Trident/7.0")){
-			logger.info("브라우저 종류: 인터넷 익스플로러 11");
-		} else if(request.getHeader("User-Agent").contains("MSIE")){
-			logger.info("브라우저 종류: 인터넷 익스플로러 10이하");
+			logger.info("브라우저 종류: 인터넷 익스풀로러 11");
+		}else if(request.getHeader("User-Agent").contains("MSIE")){
+			logger.info("브라우저 종류: 인터넷 익스풀로러 10이하");
 		}
 		//요청 파라미터 값 얻기
 		logger.info("mid: " + request.getParameter("mid"));
@@ -45,4 +43,6 @@ public class Exam06Controller {
 		
 		return "exam06/index";
 	}
+	
+	
 }
