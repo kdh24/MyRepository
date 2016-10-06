@@ -122,7 +122,17 @@ public class Exam06Controller {
 	@RequestMapping("/method5GetObject")
 	public String method5GetObject(HttpSession session){
 		Member member = (Member) session.getAttribute("member");
+		if(member != null) {
+			System.out.println("mid: " + member.getMid());
+			System.out.println("mname: " + member.getMname());
+		}
 		
+		return "exam06/index";
+	}
+	
+	@RequestMapping("/method5RemoveObject")
+	public String method5RemoveObject(HttpSession session){
+		session.removeAttribute("member");
 		
 		return "exam06/index";
 	}
