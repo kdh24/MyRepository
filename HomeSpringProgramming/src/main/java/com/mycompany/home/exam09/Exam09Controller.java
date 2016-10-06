@@ -15,8 +15,13 @@ public class Exam09Controller {
 	private ServiceA serviceA;
 	private ServiceB serviceB;
 	private ServiceC serviceC;
+	private ServiceD serviceD;
 	
 	
+	public void setServiceD(ServiceD servcieD) {
+		this.serviceD = servcieD;
+	}
+
 	public void setServiceC(ServiceC serviceC) {
 		this.serviceC = serviceC;
 	}
@@ -55,6 +60,7 @@ public class Exam09Controller {
 		serviceA.method();
 		serviceB.method();
 		serviceC.method();
+		serviceD.method();
 		return "redirect:/exam09/index";
 	}
 	
