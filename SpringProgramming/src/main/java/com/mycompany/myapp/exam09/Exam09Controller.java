@@ -46,9 +46,31 @@ public class Exam09Controller {
 		logger.info("setServiceA() 실행");
 		this.serviceA = serviceA;
 	}
+	
+	private C c;
+	
+	public void setC(C c){
+		logger.info("setC() 실행");
+		this.c = c;
+	}
+	
+	private E e;
+	
+	public void setE(E e){
+		logger.info("setE() 실행");
+		this.e = e;
+	}
 
+	private F f;
+	
+	public void setF(F f){
+		logger.info("setF() 실행"); 
+		this.f = f;
+	}
+	
 	public Exam09Controller(){
 		logger.info("Exam09Controller 객체 생성");
+		this.c = c;
 	}
 	
 	@RequestMapping("/index")
@@ -66,6 +88,15 @@ public class Exam09Controller {
 		serviceB.method();
 		serviceC.method();
 		serviceD.method();
+		return "redirect:/exam09/index";
+	}
+	
+	@RequestMapping("/method2")
+	public String method2() {
+		logger.info("method2() 처리");
+		c.method();
+		e.method();
+		f.method();
 		return "redirect:/exam09/index";
 	}
 	

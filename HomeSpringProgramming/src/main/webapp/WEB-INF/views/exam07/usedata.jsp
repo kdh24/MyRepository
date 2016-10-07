@@ -24,7 +24,7 @@
 		데이터1: ${data1} <br />
 		데이터2: ${data2} <br /><br />
 		
-		[객체의 속성(필드) 값 얻기]
+		[객체의 속성(필드) 값 얻기]<br />
 		<%Board board = (Board) request.getAttribute("board"); %>
 		<%if(board != null) {%>
 		<%-- 
@@ -36,8 +36,9 @@
 		 번호: ${board.bno}<br />
 		 제목: ${board.title}<br />
 		 내용: ${board.content}<br />
-		 조회수: ${board.hitcount}<br />
+		 조회수: ${board.hitcount}<br /><br />
 		<%} %>
+		
 		
 		[컬렉션 이용하기]<br />
 		

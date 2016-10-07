@@ -42,9 +42,28 @@
 	
 	<!-- ServiceCImpl1 를 관리 객체로 생성  -->
 	<beans:bean name="serviceCImpl1" class="com.mycompany.myapp.exam09.ServiceCImpl2"/>
-
 	<beans:bean name="serviceDImpl1" class="com.mycompany.myapp.exam09.ServiceDImpl1"/>
-
+	
+	<!-- C를 관리 객체로 생성 -->
+	<beans:bean name="c" class="com.mycompany.myapp.exam09.C">
+		<beans:constructor-arg ref="d"/>
+	</beans:bean>
+	
+	<!-- D를 관리 객체로 생성 -->
+	<beans:bean name="d" class="com.mycompany.myapp.exam09.D"/>
+	
+	<beans:bean name="e" class="com.mycompany.myapp.exam09.E">
+		<beans:constructor-arg ref="b"/>
+		<beans:constructor-arg ref="d"/>
+	</beans:bean>
+	
+	<beans:bean name="f" class="com.mycompany.myapp.exam09.F">
+		<beans:constructor-arg ref="serviceA"/>
+		<beans:constructor-arg ref="serviceB"/>
+		<beans:constructor-arg ref="serviceCImpl1"/>
+	</beans:bean>
+	
+	
 	<!-- Exam09Controller 객체를 찾아서 가져오기  -->
 	<beans:bean name="exam09Controller" class="com.mycompany.myapp.exam09.Exam09Controller">
 		<!-- Setter 주입
@@ -56,5 +75,9 @@
 		<beans:property name="serviceB" ref="serviceB" />
 		<beans:property name="serviceC" ref="serviceCImpl1" />
 		<beans:property name="serviceD" ref="serviceDImpl1" />
+		<beans:property name="c" ref="c" />
+		<beans:property name="e" ref="e" />
+		<beans:property name="f" ref="f" />
+		
 	</beans:bean>
 </beans:beans>
