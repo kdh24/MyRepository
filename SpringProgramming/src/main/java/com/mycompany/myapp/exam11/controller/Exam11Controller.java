@@ -21,7 +21,7 @@ public class Exam11Controller {
 	private Exam11MemberService memberService;
 	
 	@Autowired
-//	private Exam11BoardService boardService;
+	private Exam11BoardService boardService;
 	
 
 	@RequestMapping("/index")
@@ -91,7 +91,7 @@ public class Exam11Controller {
 	@RequestMapping(value="/boardWrite", method=RequestMethod.POST)
 	public String boardWrite(Board board){
 		logger.info("boardWrite 처리");
-//		boardService.insert(board);
+		boardService.insert(board);
 		return "redirect:/exam11/index";
 	}
 }
