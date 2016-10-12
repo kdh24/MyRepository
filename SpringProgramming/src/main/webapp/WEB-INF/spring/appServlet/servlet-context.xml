@@ -20,11 +20,11 @@
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
 		in the /WEB-INF/views directory -->
-	<beans:bean
+	<beans:bean		
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">	<!-- 이게 없으면 jsp파일을 못 찾는다. -->
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
-	</beans:bean>
+	</beans:bean><!-- jsp 뷰의 역할을 완벽하게 해준다 -->
 
 	<context:component-scan base-package="com.mycompany.myapp" />	<!-- 컴포넌트(스프링이 관리해야할 객체/ ex.컨트롤러)를 지정한 패키지 내 어디에 있든 하나 하나 다 찾아서 사용하겠다 -->
 																	<!-- 어노테이션을 통해 컴포넌트인지 아닌지 구분한다(@Controller가 붙은 놈은 다 찾는다) -->

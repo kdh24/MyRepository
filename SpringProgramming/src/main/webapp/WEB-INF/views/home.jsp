@@ -6,7 +6,7 @@
 		<meta charset="UTF-8">
 	</head>
 	<body> 
-		SpringProgramming
+		SpringProgramming<br />
 		</hr>
 		1. <a href="/myapp/exam01/index">Exam01</a>: 컨트롤러 및 요청 매핑 메소드 작성<br />
 		2. <a href="/myapp/exam02/index">Exam02</a>: 요청 파라미터 값 받기<br />
@@ -21,5 +21,10 @@
 		
 		9. <a href="/myapp/exam09/index">Exam09</a>: 의존성 주입(DI): XML 설정 파일 이용<br />
 		10. <a href="/myapp/exam10/index">Exam10</a>: 의존성 주입(DI): 어노테이션  이용<br />
+		
+		<br />
+		
+		11. <a href="/myapp/exam11/index">Exam11</a>: 서비스 계층과 데이터(퍼시스턴스) 계층<br />
+		
 	</body>
 </html>
