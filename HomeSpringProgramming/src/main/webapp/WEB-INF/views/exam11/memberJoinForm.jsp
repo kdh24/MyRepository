@@ -8,7 +8,7 @@
 	<body>
 	<hr />
 	[회원 가입 폼]<br />
-	<form method="post" action="/home/exam11/memberLogin">
+	<form method="post" action="/home/exam11/memberJoin">
 		아이디: <input type="text" name="mid" value="fall" /><br />
 		이름 : <input type="text" name="mname" value="한가을" /><br />
 		비밀번호 : <input type="password" name="mpassword" value="1235" /><br />

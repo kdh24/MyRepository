@@ -73,5 +73,4 @@ public class Exam07Controller {
 		return "exam07/usedata";
 	}
 	
-	
 }
