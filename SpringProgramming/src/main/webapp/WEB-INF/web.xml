@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"		
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 	
+						http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" 
+	version="3.1">
+	<!-- 선언부는 제일 첫 줄에 있어야 한다 엔터치면 에러다
+		 네임 스페이스 선언-> 디폴트 네임 스페이스(:접두사 없는 것) 선언을 찾아야 한다 그게 마크업 언어 이름이다.
+		 마크업 언어의 위치는 schemaLocation에 있다 ~.xsd에 마크업 언어의 설정 내용이 담겨있다 에디터는 이 내용을 참고하여
+		 아래 태그들의 내용들이 올바른지 확인한다. -->
+	
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/spring/root-context.xml</param-value>
+	</context-param>
+
+	<!-- Creates the Spring Container shared by all Servlets and Filters -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<!-- Processes application requests -->
+	<servlet>
+		<servlet-name>appServlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>	<!-- 이 녀석을 실행을 한다 -->
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>appServlet</servlet-name>
+		<url-pattern>/</url-pattern>	<!-- http://localhost:8080/myapp/ 까지가 생략되있다 => 클라이언트가 무슨 요청을 해도 DispatcherServlet이 실행된다. -->
+	</servlet-mapping>
+</web-app>
