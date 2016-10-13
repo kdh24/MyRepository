@@ -72,5 +72,26 @@ public class Exam11Controller {
 	}
 	
 	
+	@RequestMapping(value="boardWrite", method=RequestMethod.GET)
+	public String boardWriteForm(){
+		logger.info("boardWrite(GET) 처리");
+		
+		return "exam11/boardWriteForm";
+	}
+	
+	@RequestMapping(value="boardWrite", method=RequestMethod.POST)
+	public String boardWrite(){
+		logger.info("boardWrite(POST) 처리");
+		
+		return "redirect:/exam11/boardList";
+	}
+	
+	@RequestMapping("boardList")
+	public String boardList(){
+		logger.info("boardList 처리");
+		return "exam11/boardList";
+	}
+	
+	
 	
 }
