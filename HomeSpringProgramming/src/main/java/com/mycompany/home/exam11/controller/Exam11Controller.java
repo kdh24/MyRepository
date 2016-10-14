@@ -1,15 +1,19 @@
 package com.mycompany.home.exam11.controller;
 
 import java.util.Arrays;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.mycompany.home.exam11.dto.Board;
 import com.mycompany.home.exam11.dto.Member;
+import com.mycompany.home.exam11.service.Exam11BoardService;
 import com.mycompany.home.exam11.service.Exam11MemberService;
 
 @Controller
@@ -19,6 +23,8 @@ public class Exam11Controller {
 	
 	@Autowired
 	Exam11MemberService memberService;
+	@Autowired
+	Exam11BoardService boardService;
 	
 	@RequestMapping("/index")
 	public String index(){
@@ -74,24 +80,36 @@ public class Exam11Controller {
 	
 	@RequestMapping(value="boardWrite", method=RequestMethod.GET)
 	public String boardWriteForm(){
-		logger.info("boardWrite(GET) 처리");
-		
+		logger.info("boardWriteForm(GET) 처리");
 		return "exam11/boardWriteForm";
 	}
 	
 	@RequestMapping(value="boardWrite", method=RequestMethod.POST)
 	public String boardWrite(){
 		logger.info("boardWrite(POST) 처리");
-		
-		return "redirect:/exam11/boardList";
+		return "redirect:/exam11/index";
 	}
 	
 	@RequestMapping("boardList")
-	public String boardList(){
+	public String boardList(Model model){
 		logger.info("boardList 처리");
+		List<Board> list = boardService.getList();
+		model.addAttribute("boardlist", list);
 		return "exam11/boardList";
 	}
 	
+	@RequestMapping("boardView")
+	public String boardView(int bno, Model model){
+		logger.info("boardList 처리");
+		Board board = boardService.getBoard(bno);
+		model.addAttribute("board", board);
+		return "exam11/boardView";
+	}
 	
+	@RequestMapping(value="/boardUpdate", method=RequestMethod.GET)
+	public String boardUpdate(Board board){
+		logger.info("boardUpdateForm 처리");
+		return "exam11/boardUpdateForm";
+	}
 	
 }
