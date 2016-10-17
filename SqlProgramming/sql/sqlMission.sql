@@ -10,3 +10,4 @@ select empno, ename, sal from emp where sal <= 300;
 -- 이름이 "오지호"인 사원의 사원번호, 사원명, 급여를 출력하시오
 select empno, ename, sal from emp where ename like '오지호';
 -- 급여가 250이거나, 300이거나, 500인 사원들의 사원번호와 사원명과 급여를 검색하시오
+select empno, ename, sal from emp where sal in(250, 300, 500);
