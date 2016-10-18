@@ -43,6 +43,10 @@ public class Exam11BoardDao {
 		
 		return board;
 	}
+
+	public void update(Board board) {
+		logger.info("update 처리");
+	}
 	
 
 }

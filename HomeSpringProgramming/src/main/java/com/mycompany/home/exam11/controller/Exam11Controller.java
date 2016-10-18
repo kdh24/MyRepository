@@ -107,9 +107,18 @@ public class Exam11Controller {
 	}
 	
 	@RequestMapping(value="/boardUpdate", method=RequestMethod.GET)
-	public String boardUpdate(Board board){
-		logger.info("boardUpdateForm 처리");
+	public String boardUpdateForm(int bno, Model model){
+		logger.info("boardUpdateForm(GET) 처리");
+		Board board = boardService.getBoard(bno);
+		model.addAttribute("board", board);
 		return "exam11/boardUpdateForm";
+	}
+	
+	@RequestMapping(value="/boardUpdate", method=RequestMethod.POST)
+	public String boardUpdate(Board board){
+		logger.info("boardUpdate(POST) 처리");
+		boardService.updateBoard(board);
+		return "redirect:/exam11/boardList";
 	}
 	
 }
