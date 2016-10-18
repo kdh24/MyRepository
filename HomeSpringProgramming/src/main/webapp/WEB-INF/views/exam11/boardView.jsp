@@ -8,7 +8,7 @@
 	<body>
 		게시물 보기
 		<hr />
-		제목: ${board.btitile}<br />
+		제목: ${board.btitle}<br />
 		내용: ${board.bcontent}<br />
 		글쓴이: ${board.bwriter}<br />
 	</body>

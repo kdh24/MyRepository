@@ -33,11 +33,6 @@ public class Exam11BoardService {
 		Board board = boardDao.selectBoard(bno);
 		return board;
 	}
-
-	public void updateBoard(Board board) {
-		logger.info("updateBoard 처리");
-		boardDao.update(board);
-	}
 	
 	public void updateBoard(Board board){
 		logger.info("updateBoard 처리");

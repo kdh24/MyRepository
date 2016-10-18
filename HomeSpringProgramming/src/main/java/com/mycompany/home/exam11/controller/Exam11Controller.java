@@ -111,10 +111,6 @@ public class Exam11Controller {
 		logger.info("boardUpdateForm(GET) 처리");
 		Board board = boardService.getBoard(bno);
 		model.addAttribute("board", board);
-<<<<<<< HEAD
-=======
-		
->>>>>>> 6c42b574eb3cd74ec86660ad176da765d24b9e0e
 		return "exam11/boardUpdateForm";
 	}
 	
@@ -122,10 +118,7 @@ public class Exam11Controller {
 	public String boardUpdate(Board board){
 		logger.info("boardUpdate(POST) 처리");
 		boardService.updateBoard(board);
-<<<<<<< HEAD
 		return "redirect:/exam11/boardList";
-=======
-		return "exam11/boardList";
 	}
 	
 	@RequestMapping("/boardDelete")
@@ -134,7 +127,6 @@ public class Exam11Controller {
 		boardService.deleteBoard(bno);
 		return "redirect:/exam11/boardList";
 		
->>>>>>> 6c42b574eb3cd74ec86660ad176da765d24b9e0e
 	}
 	
 }
