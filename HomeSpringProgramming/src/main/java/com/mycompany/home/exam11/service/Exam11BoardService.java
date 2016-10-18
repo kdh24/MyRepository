@@ -39,5 +39,14 @@ public class Exam11BoardService {
 		boardDao.update(board);
 	}
 	
+	public void updateBoard(Board board){
+		logger.info("updateBoard 처리");
+		boardDao.update(board);
+	}
+	
+	public void deleteBoard(int bno){
+		logger.info("deleteBoard 처리");
+		boardDao.delete(bno);
+	}
 	
 }

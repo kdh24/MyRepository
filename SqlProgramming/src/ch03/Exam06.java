@@ -21,7 +21,7 @@ public class Exam06 {
 
 	private static Employee getEmployee(int serchEmpno) {
 		// select * from emp where empno=?
-		Employee emp = new Employee();
+		Employee employee = null;
 		Connection conn = null;
 		try{
 			Class.forName("oracle.jdbc.OracleDriver");
@@ -31,15 +31,16 @@ public class Exam06 {
 			pstmt.setInt(1, serchEmpno);
 			ResultSet rs = pstmt.executeQuery();
 			
-			while(rs.next()){
-				emp.setEmpno(rs.getInt("empno"));
-				emp.setEname(rs.getString("ename"));
-				emp.setJob(rs.getString("job"));
-				emp.setMgr(rs.getInt("mgr"));
-				emp.setHiredate(rs.getDate("hiredate"));
-				emp.setSal(rs.getDouble("sal"));
-				emp.setComm(rs.getDouble("comm"));
-				emp.setDeptno(rs.getInt("deptno"));
+			if(rs.next()){
+				employee = new Employee();
+				employee.setEmpno(rs.getInt("empno"));
+				employee.setEname(rs.getString("ename"));
+				employee.setJob(rs.getString("job"));
+				employee.setMgr(rs.getInt("mgr"));
+				employee.setHiredate(rs.getDate("hiredate"));
+				employee.setSal(rs.getDouble("sal"));
+				employee.setComm(rs.getDouble("comm"));
+				employee.setDeptno(rs.getInt("deptno"));
 			}
 			
 			rs.close();
@@ -49,13 +50,13 @@ public class Exam06 {
 			try { conn.close(); } catch (SQLException e1) { }
 			e.printStackTrace();
 		}
-		return emp;
+		return employee;
 	}
 
 	private static List<Department> getDepartment(String searchDname) {
 		// select * from dept where dname like ?
 		List<Department> list = new ArrayList<>();
-		Connection conn = null;
+		Connection conn = null; // 초기화를 해줘야 초기화 에러가 나지 않는다
 		try {
 			Class.forName("oracle.jdbc.OracleDriver");
 			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "tester1", "kosa12345");
@@ -75,13 +76,10 @@ public class Exam06 {
 
 			rs.close();
 			pstmt.close();
-			conn.close();
 		} catch (Exception e) {
-			try {
-				conn.close();
-			} catch (SQLException e1) {
-			}
 			e.printStackTrace();
+		}finally{
+			try { conn.close(); } catch (SQLException e1) {}
 		}
 
 		return list;
