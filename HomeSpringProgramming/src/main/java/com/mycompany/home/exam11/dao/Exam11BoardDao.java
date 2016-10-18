@@ -44,5 +44,13 @@ public class Exam11BoardDao {
 		return board;
 	}
 	
+	public void update(Board board){
+		logger.info("update 처리");
+	}
+	
+	public void delete(int bno){
+		logger.info("delete 처리");
+	}
+	
 
 }
