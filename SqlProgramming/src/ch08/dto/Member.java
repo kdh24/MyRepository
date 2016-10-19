@@ -1,4 +1,4 @@
-package ch07.dto;
+package ch08.dto;
 
 import java.util.Date;
 
