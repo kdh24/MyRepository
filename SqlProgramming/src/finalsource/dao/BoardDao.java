@@ -18,17 +18,17 @@ public class BoardDao {
 	}
 
 	public int insert(Board board) throws SQLException {
-		String sql = "insert into board(bno, btitle, bcontent, bwriter, bhitcount, bdate) values(?, ?, ?, ?, ?, ?)";
+		String sql = "insert into board(bno, btitle, bcontent, bwriter, bhitcount, bdate) values(seq_board_bno.nextval, ?, ?, ?, 0, sysdate)";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
-		pstmt.setInt(1, board.getBno());
-		pstmt.setString(2, board.getBtitle());
-		pstmt.setString(3, board.getBcontent());
-		pstmt.setString(4, board.getBwriter());
-		pstmt.setInt(5, board.getBhitcount());
-		pstmt.setDate(6, new Date(board.getBdate().getTime()));
-		int rawNo = pstmt.executeUpdate();
+//		pstmt.setInt(1, board.getBno());
+		pstmt.setString(1, board.getBtitle());
+		pstmt.setString(2, board.getBcontent());
+		pstmt.setString(3, board.getBwriter());
+//		pstmt.setInt(5, board.getBhitcount());
+//		pstmt.setDate(6, new Date(board.getBdate().getTime()));
+		int rowNo = pstmt.executeUpdate();
 		pstmt.close();
-		return rawNo;
+		return rowNo;
 	}
 	
 	public Board selectByBno(int bno) throws SQLException {
@@ -72,7 +72,6 @@ public class BoardDao {
 		}
 		rs.close();
 		pstmt.close();
-		
 		return list;
 	}
 	
@@ -85,17 +84,17 @@ public class BoardDao {
 		pstmt.setInt(4, board.getBhitcount());
 		pstmt.setDate(5, new Date(board.getBdate().getTime()));
 		pstmt.setInt(6, board.getBno());
-		int rawNo = pstmt.executeUpdate();
+		int rowNo = pstmt.executeUpdate();
 		pstmt.close();
-		return rawNo;
+		return rowNo;
 	}
 	
 	public int deleteByBno(int bno) throws SQLException {
 		String sql = "delete board where bno = ?";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1, bno);
-		int rawNo = pstmt.executeUpdate();
+		int rowNo = pstmt.executeUpdate();
 		pstmt.close();
-		return rawNo;
+		return rowNo;
 	}
 }

@@ -11,11 +11,11 @@ import finalsource.dto.Board;
 
 public class TestBoardDao {
 	public static void main(String[] args) {
-		// testInsert();
-		// testSelectByBno();
+		testInsert();
+//		testSelectByBno();
 //		testSelectByBtitle();
-//		 testUpdate();
-		 testDeleteByBno();
+//		testUpdate();
+//		testDeleteByBno();
 	}
 
 	public static void testInsert() {
@@ -26,17 +26,27 @@ public class TestBoardDao {
 
 			BoardDao dao = new BoardDao();
 			dao.setConn(conn);
-			Board board = new Board();
+			Board board =null;// new Board();
 
-			board.setBno(1);
+//			board.setBno(1);
 			board.setBtitle("제목1");
 			board.setBcontent("내용1");
 			board.setBwriter("user7");
 			board.setBhitcount(0);
 			board.setBdate(new Date());
-
-			int rawNo = dao.insert(board);
-			System.out.println(rawNo + "행 추가됨");
+			int rowNo = dao.insert(board);
+			/*int rowNo= 0;
+			for(int i=1; i<10000; i++){
+				board = new Board();
+				board.setBtitle("제목" + i);
+				board.setBcontent("내용" + i);
+				board.setBwriter("user7");
+				board.setBhitcount(0);
+				board.setBdate(new Date());
+				rowNo += dao.insert(board);
+			}
+			*/
+			System.out.println(rowNo + "행 추가됨");
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -62,7 +72,7 @@ public class TestBoardDao {
 			System.out.print(board.getBcontent() + ":");
 			System.out.print(board.getBwriter() + ":");
 			System.out.print(board.getBhitcount() + ":");
-			System.out.print(board.getBdate() + ":");
+			System.out.print(board.getBdate());
 			System.out.println();
 
 		} catch (Exception e) {
@@ -91,7 +101,7 @@ public class TestBoardDao {
 				System.out.print(board.getBcontent() + ":");
 				System.out.print(board.getBwriter() + ":");
 				System.out.print(board.getBhitcount() + ":");
-				System.out.print(board.getBdate() + ":");
+				System.out.print(board.getBdate());
 				System.out.println();
 			}
 			
@@ -115,7 +125,7 @@ public class TestBoardDao {
 			board.setBno(1);
 			board.setBtitle("제목수정1");
 			board.setBcontent("내용수정1");
-			board.setBwriter("홍길동");
+			board.setBwriter("user10");
 			board.setBhitcount(10);
 			board.setBdate(new Date());
 			
