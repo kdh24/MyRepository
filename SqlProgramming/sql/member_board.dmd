@@ -1,8 +1,16 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="member_board" id="9C326972-AB43-5060-267F-0A033D110353" version="3.5">
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="member_board" id="10C70461-77F9-35BA-A87E-2A063C5B9EAE" version="3.5">
 <createdBy>Administrator</createdBy>
-<createdTime>2016-10-20 05:03:01 UTC</createdTime>
+<createdTime>2016-10-20 00:21:20 UTC</createdTime>
 <ownerDesignName>member_board</ownerDesignName>
 <capitalNames>false</capitalNames>
-<designId>9C326972-AB43-5060-267F-0A033D110353</designId>
+<designId>10C70461-77F9-35BA-A87E-2A063C5B9EAE</designId>
+<usedDesignStorageDescriptors>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="B8930DA1-1DB3-7DED-9954-BD7DD1FEFB58">
+<designStoragePath>D:\Kosa3sw\MyRepository\SqlProgramming\sql</designStoragePath>
+</designDescr>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="A2131211-91D8-D394-8F8A-CC524EBA706E">
+<designStoragePath>D:\Kosa3sw\MyRepository\SqlProgramming\sql</designStoragePath>
+</designDescr>
+</usedDesignStorageDescriptors>
 </OSDM_Design>

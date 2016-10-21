@@ -1,0 +1,46 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="member" directorySegmentName="seg_0" id="2D6F606F-3357-3CCB-D4D0-5376F2B45781">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-20 06:27:46 UTC</createdTime>
+<ownerDesignName>member_board</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="mid" id="057387E1-B699-1647-6151-C7B3B34A4A98">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-20 06:28:36 UTC</createdTime>
+<ownerDesignName>member_board</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="mbirth" id="3214C801-469F-5FA7-4280-FB79D2D1A7F5">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-20 06:29:36 UTC</createdTime>
+<ownerDesignName>member_board</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="mpassword" id="72A738C2-FB31-63E9-E378-1C4610485ED0">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-20 06:29:24 UTC</createdTime>
+<ownerDesignName>member_board</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="mname" id="75403322-B518-920A-F67C-114F516357D9">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-20 06:28:56 UTC</createdTime>
+<ownerDesignName>member_board</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="mage" id="77A88794-4CAE-1B6E-0821-6FF3500A92A0">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-20 06:30:27 UTC</createdTime>
+<ownerDesignName>member_board</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="pk_member_mid" id="190C7ECD-4642-110E-0535-B102B5140E5F">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-20 06:28:36 UTC</createdTime>
+<ownerDesignName>member_board</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>
