@@ -1,47 +1,47 @@
 ------------------------ch02 -------------------------------------------------
--- 2π¯ πÆ¡¶
+-- 2Î≤à Î¨∏Ï†ú
 select * from emp
 where sal between 400 and 500;
--- 7π¯ πÆ¡¶
+-- 7Î≤à Î¨∏Ï†ú
 select disempno, ename
 from emp
 order by empno desc;
 
 ------------------------ch03 -------------------------------------------------
--- 1π¯ πÆ¡¶
+-- 1Î≤à Î¨∏Ï†ú
 select * from emp
 where mod(empno, 2)=1;
--- 2π¯ πÆ¡¶
-select hiredate, to_char(hiredate, 'yyyy') ≥‚µµ,
-        substr(hiredate, 4, 2) ø˘,
-        substr(hiredate, 7, 2) ¿œ
+-- 2Î≤à Î¨∏Ï†ú
+select hiredate, to_char(hiredate, 'yyyy') ÎÖÑÎèÑ,
+        substr(hiredate, 4, 2) Ïõî,
+        substr(hiredate, 7, 2) Ïùº
 from emp;
--- 3π¯ πÆ¡¶
-select hiredate, round((sysdate-hiredate)) ±Ÿπ´¿œºˆ
+-- 3Î≤à Î¨∏Ï†ú
+select hiredate, round((sysdate-hiredate)) Í∑ºÎ¨¥ÏùºÏàò
 from emp;
--- 4π¯ πÆ¡¶
-select empno, ename, nvl(TO_CHAR(mgr, '9999'), 'C E O') as "¡˜º”ªÛ∞¸"
+-- 4Î≤à Î¨∏Ï†ú
+select empno, ename, nvl(TO_CHAR(mgr, '9999'), 'C E O') as "ÏßÅÏÜçÏÉÅÍ¥Ä"
 from emp
 where mgr is null;
--- 6π¯ πÆ¡¶
+-- 6Î≤à Î¨∏Ï†ú
 select sysdate+100
 from dual;
--- 7π¯ πÆ¡¶
+-- 7Î≤à Î¨∏Ï†ú
 select last_day(sysdate)
 from dual;
 
 ------------------------ch04 -------------------------------------------------
 
--- 7π¯ πÆ¡¶
-select count(*) ªÁø¯ºˆ
+-- 7Î≤à Î¨∏Ï†ú
+select count(*) ÏÇ¨ÏõêÏàò
 from emp
 where comm is not null 
       and deptno=30
 group by deptno;
--- 8π¯ πÆ¡¶
-select max(to_char(hiredate, 'YYYY-MM-DD HH:MI:SS')) as ¿‘ªÁ¿œ, min(to_char(hiredate, 'YYYY-MM-DD HH:MI:SS')) as ¿‘ªÁ¿œ
+-- 8Î≤à Î¨∏Ï†ú
+select max(to_char(hiredate, 'YYYY-MM-DD HH:MI:SS')) as ÏûÖÏÇ¨Ïùº, min(to_char(hiredate, 'YYYY-MM-DD HH:MI:SS')) as ÏûÖÏÇ¨Ïùº
 from emp;
--- 9π¯ πÆ¡¶
+-- 9Î≤à Î¨∏Ï†ú
 select job, sum(sal)
 from emp
 group by job
@@ -49,10 +49,10 @@ having sum(sal) > 300;
 
 ------------------------ch04 -------------------------------------------------
 
--- 2π¯ πÆ¡¶
+-- 2Î≤à Î¨∏Ï†ú
 insert into dept
-values(90, '±‚»π∫Œ', '');
--- 3π¯
+values(90, 'Í∏∞ÌöçÎ∂Ä', '');
+-- 3Î≤à
 update emp
 set sal = sal * 1.1;
 
@@ -66,6 +66,12 @@ insert
 into test(name) values ( hm);
 
 ------------------------ch10 -------------------------------------------------
-select *
+
+-- 1Î≤à Î¨∏Ï†ú
+select ename, dname
 from emp, dept;
-where emp.deptno = dept.deptno;
+--where emp.deptno = dept.deptno;
+-- 2Î≤à Î¨∏Ï†ú
+select ename
+from emp member, emp manager
+where member.mgr = manager.empno;

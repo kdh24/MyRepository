@@ -97,4 +97,34 @@ public class BoardDao {
 		pstmt.close();
 		return rowNo;
 	}
+	
+	public List<Board> selectByPage(int pageNo, int rowsPerPage) throws SQLException {
+		List<Board> list = new ArrayList<>();
+		String sql = "";
+		sql += "select rn bno, btitle, bcontent, bwriter, bhitcount, bdate ";
+		sql += "from ( ";
+		sql += "select rownum as rn, bno, btitle, bcontent, bwriter, bhitcount, bdate ";
+		sql += "from (select bno, btitle, bcontent, bwriter, bhitcount, bdate from board order by bno desc) ";
+		sql += "where rownum<=? ";
+		sql += ") ";
+		sql += "where rn>=? ";
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		pstmt.setInt(1, pageNo*rowsPerPage);
+		pstmt.setInt(2, (pageNo-1)*rowsPerPage+1);
+		ResultSet rs = pstmt.executeQuery();
+		
+		while(rs.next()){
+			Board board = new Board();
+			board.setBno(rs.getInt("bno"));
+			board.setBtitle(rs.getString("btitle"));
+			board.setBcontent(rs.getString("bcontent"));
+			board.setBwriter(rs.getString("bwriter"));
+			board.setBhitcount(rs.getInt("bhitcount"));
+			board.setBdate(rs.getDate("bdate"));
+			list.add(board);
+		}
+		rs.close();
+		pstmt.close();
+		return list;
+	}
 }
