@@ -8,7 +8,8 @@
 	<body>
 		Exam12
 		<hr />
-		공통 : 
+		[공통]
+		- 메이븐 설정 파일 수정(Spring JDBC와 커넥션 풀의 의종성 라이브러리 추가)<br /><br />
 		
 		1) 웹 애플리케이션이 커넥션 풀을 가지고 있는 경우 <br />
 		- 스프링 설정 파일(servlet-context.xml) <br /><br />

@@ -49,4 +49,13 @@
 		<servlet-name>appServlet</servlet-name>
 		<url-pattern>/</url-pattern>	<!-- http://localhost:8080/myapp/ 까지가 생략되있다 => 클라이언트가 무슨 요청을 해도 DispatcherServlet이 실행된다. -->
 	</servlet-mapping>
+	
+	<!--톰캣에서 커넥션 풀 설정 
+		<resource-ref>
+			 <description>Local Datasource</description>
+			 <res-ref-name>jdbc/orcl</res-ref-name>
+			 <res-type>javax.sql.DataSource</res-type>
+			 <res-auth>Container</res-auth>
+		</resource-ref>
+		 -->
 </web-app>
