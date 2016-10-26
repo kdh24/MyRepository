@@ -66,12 +66,20 @@ insert
 into test(name) values ( hm);
 
 ------------------------ch10 -------------------------------------------------
-
 -- 1번 문제
-select ename, dname
+select *
 from emp, dept;
 --where emp.deptno = dept.deptno;
--- 2번 문제
-select ename
+
+-- 2번
+select member.ename
 from emp member, emp manager
 where member.mgr = manager.empno;
+-- 4번 
+select w.ename, m.ename
+from emp w, emp m
+where w.mgr = m.empno;
+-- 8번 문제
+select *
+from dept01 left outer join dept02
+where dept01.deptno = dept02.deptno;
