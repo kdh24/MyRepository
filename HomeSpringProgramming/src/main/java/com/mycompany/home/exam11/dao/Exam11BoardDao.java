@@ -22,7 +22,7 @@ public class Exam11BoardDao {
 
 	public List<Board> selectList() {
 		logger.info("selectList 처리");
-		List<Board> list = new ArrayList<>();
+		List<Board> list = new ArrayList<Board>();
 		for(int i=1; i<=10; i++){
 			Board board = new Board();
 			board.setBtitle("제목" + i);

@@ -58,7 +58,7 @@ public class Exam07Controller {
 	
 	@RequestMapping("/method5")
 	public String method5(Model model){
-		List<Board> list = new ArrayList<>();
+		List<Board> list = new ArrayList<Board>();
 		
 		for(int i=1; i<=5; i++){
 			Board board = new Board();
