@@ -31,7 +31,6 @@
 		<beans:property name="acquireIncrement" value="1" />
 		<beans:property name="minPoolSize" value="1" />
 	</beans:bean>
-	
 	 <!-- 
 	 <jee:jndi-lookup id="dataSource" jndi-name="jdbc/orcl" />
 	  -->
