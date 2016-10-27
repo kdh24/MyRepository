@@ -54,7 +54,7 @@ public class MemberDao {
 	}
 	
 	public Member selectByMid(String mid) {
-		String sql = "select mid, mname, mpassword, maddress, mtel, memail from where mid=?";
+		String sql = "select mid, mname, mpassword, maddress, mtel, memail from member where mid=?";
 		List<Member> list = jdbcTemplate.query(sql, new Object[]{mid}, new RowMapper<Member>() {
 
 			@Override
@@ -74,7 +74,7 @@ public class MemberDao {
 	}
 	
 	public String selectByMemail(String memail){
-		String sql = "select mid from where memail=?";
+		String sql = "select mid from member where memail=?";
 		List<String> list = jdbcTemplate.query(sql, new Object[] { memail }, new RowMapper<String>() {
 			@Override
 			public String mapRow(ResultSet rs, int row) throws SQLException {

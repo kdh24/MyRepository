@@ -73,13 +73,24 @@ public class FreeBoardDao {
 	
 	public List<FreeBoard> selectByPage(int pageNo, int rowsPerPage){
 		String sql = "";
-		sql += "select rn bno, btitle, bcontent, bwriter, bhitcount, bdate ";
+		sql += "select rn, bno, btitle, bcontent, bwriter, bhitcount, bdate ";
 		sql += "from ( ";
 		sql += " select rownum as rn, bno, btitle, bcontent, bwriter, bhitcount, bdate ";
 		sql += " from (select bno, btitle, bcontent, bwriter, bhitcount, bdate from freeboard order by bno desc) ";
 		sql += " where rownum<=? ";
 		sql += ") ";
 		sql += "where rn>=? ";
+		
+//		
+//		String sql = "select rn, bno, btitle, bcontent, bhitcount, bwriter, bdate "; 
+//        sql+="from ( ";
+//        sql += "select rownum as rn, bno, btitle, bcontent, bhitcount, bwriter, bdate ";
+//        sql+=" from (select bno, btitle, bcontent, bhitcount, bwriter, bdate from freeboard order by bno desc) ";
+//        sql+= "where rownum<=? ";
+//        sql += ") ";
+//        sql += "where rn>=? ";
+//		
+		
 		List<FreeBoard> list = jdbcTemplate.query(
 				sql,
 				new Object[]{(pageNo*rowsPerPage), ((pageNo-1)*rowsPerPage + 1)},
