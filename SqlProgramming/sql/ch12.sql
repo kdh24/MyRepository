@@ -32,3 +32,14 @@ from (
   where rownum<=(2* 10)
 )
 where rn>=((2-1) * 10 + 1);
+
+
+
+--1페이지에 10개씩 구성하고, n번째 페이지를 가져와라
+select rn bno, btitle
+from (
+  select rownum as rn, bno, btitle
+  from (select bno, btitle from board order by bno desc)
+  where rownum<=(2* 10)
+)
+where rn>=((2-1) * 10 + 1);
