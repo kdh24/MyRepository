@@ -3,6 +3,7 @@ package com.mycompany.myweb.dto;
 import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.web.multipart.MultipartFile;
 
 public class PhotoBoard {
 	private int bno;
@@ -12,7 +13,8 @@ public class PhotoBoard {
 	private int bhitcount;
 	@DateTimeFormat(pattern="YYYY-MM-dd")
 	private Date bdate;
-	private String originalFile;
+	private MultipartFile photo;
+	private String originalfile;
 	private String savedfile;
 	private String mimetype;
 	
@@ -53,10 +55,10 @@ public class PhotoBoard {
 		this.bdate = bdate;
 	}
 	public String getOriginalFile() {
-		return originalFile;
+		return originalfile;
 	}
 	public void setOriginalFile(String originalFile) {
-		this.originalFile = originalFile;
+		this.originalfile = originalFile;
 	}
 	public String getSavedfile() {
 		return savedfile;
@@ -69,5 +71,17 @@ public class PhotoBoard {
 	}
 	public void setMimetype(String mimetype) {
 		this.mimetype = mimetype;
+	}
+	public String getOriginalfile() {
+		return originalfile;
+	}
+	public void setOriginalfile(String originalfile) {
+		this.originalfile = originalfile;
+	}
+	public MultipartFile getPhoto() {
+		return photo;
+	}
+	public void setPhoto(MultipartFile photo) {
+		this.photo = photo;
 	}
 }

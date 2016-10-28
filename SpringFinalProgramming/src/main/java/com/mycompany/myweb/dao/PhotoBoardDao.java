@@ -72,8 +72,8 @@ public class PhotoBoardDao {
 				photoBoard.setBhitcount(rs.getInt("bhitcount"));
 				photoBoard.setBdate(rs.getDate("bdate"));
 				photoBoard.setOriginalFile(rs.getString("originalfile"));
-				photoBoard.setSavedfile("savedfile");
-				photoBoard.setMimetype("mimetype");
+				photoBoard.setSavedfile(rs.getString("savedfile"));
+				photoBoard.setMimetype(rs.getString("mimetype"));
 				
 				return photoBoard;
 			}
@@ -83,10 +83,10 @@ public class PhotoBoardDao {
 	
 	public List<PhotoBoard> selectByPage(int pageNo, int rowsPerPage){
 		String sql = "";
-		sql += "select rn bno, btitle, bhitcount, savedfile ";
+		sql += "select rn, bno, btitle, bhitcount, bdate, savedfile ";
 		sql += "from ( ";
-		sql += " select rownum as rn, bno, btitle, bhitcount, savedfile ";
-		sql += " from (select btitle, bhitcount, savedfile from photoboard order by bno desc) ";
+		sql += " select rownum as rn, bno, btitle, bhitcount, bdate, savedfile ";
+		sql += " from (select bno, btitle, bhitcount, bdate, savedfile from photoboard order by bno desc) ";
 		sql += " where rownum<=? ";
 		sql += ") ";
 		sql += "where rn>=? ";
@@ -101,6 +101,7 @@ public class PhotoBoardDao {
 						photoBoard.setBno(rs.getInt("bno"));
 						photoBoard.setBtitle(rs.getString("btitle"));
 						photoBoard.setBhitcount(rs.getInt("bhitcount"));
+						photoBoard.setBdate(rs.getDate("bdate"));
 						photoBoard.setSavedfile(rs.getString("savedfile"));
 						
 						return photoBoard;
