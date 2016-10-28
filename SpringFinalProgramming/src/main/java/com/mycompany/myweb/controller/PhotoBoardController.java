@@ -125,10 +125,31 @@ public class PhotoBoardController {
 	}
 	
 	@RequestMapping(value="/modify", method=RequestMethod.POST)
-	public String modify(PhotoBoard photoBoard) {
-		PhotoBoard dbPhotoBoard = photoBoardService.info(photoBoard.getBno());
-		photoBoard.setBhitcount(dbPhotoBoard.getBhitcount());
-		photoBoardService.modify(photoBoard);
+	public String modify(PhotoBoard photoBoard, HttpSession session) {
+		try{
+			PhotoBoard dbPhotoBoard = photoBoardService.info(photoBoard.getBno());
+			photoBoard.setBhitcount(dbPhotoBoard.getBhitcount());
+			
+	//		String mid = (String) session.getAttribute("login");
+	//		photoBoard.setBwriter(mid);
+			
+			photoBoard.setOriginalFile(photoBoard.getPhoto().getOriginalFilename());
+			
+			String savedfile = new Date().getTime() + photoBoard.getPhoto().getOriginalFilename();
+			
+			String realpath = session.getServletContext().getRealPath("/WEB-INF/photo/"+savedfile);
+			//실제 파일을 파일 시스템에 저장
+			//C:\Users\Administrator\workspace\.metadata\.....\SpringFinalProgramming\...
+			photoBoard.getPhoto().transferTo(new File(realpath));
+			photoBoard.setSavedfile(savedfile);
+			
+			photoBoard.setMimetype(photoBoard.getPhoto().getContentType());
+			
+			photoBoardService.modify(photoBoard);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		
 		return "redirect:/photoboard/list";
 	}
 	

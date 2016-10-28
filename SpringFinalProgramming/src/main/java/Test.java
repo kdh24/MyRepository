@@ -6,7 +6,7 @@ public class Test {
 	public static void main(String[] args) throws Exception {
 		//Freeboard에 데이터 추가함
 		Class.forName("oracle.jdbc.OracleDriver");
-		Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "final", "kosa12345");
+		Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@106.253.56.123:1521:orcl", "kosauser10", "kosa12345");
 		String sql = "insert into photoboard(bno, btitle, bcontent, bwriter, bhitcount, bdate, originalfile, savedfile, mimetype) values(seq_photoboard_bno.nextval, ?, ?, ?, 0, sysdate,?,?,?)";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		for(int i=1; i<=170; i++) {
