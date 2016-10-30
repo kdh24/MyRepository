@@ -14,7 +14,7 @@
 		<c:if test="${login == null}">
 			<a href="<%=pageContext.getServletContext().getContextPath()%>/member/login">로그인</a><br />
 		</c:if>
-		<c:if test="${login != null}">
+		<c:if test="${login != null}">	
 			<a href="<%=pageContext.getServletContext().getContextPath()%>/member/logout">로그아웃</a><br />
 		</c:if>
 		<!-- 표현언어 -->
