@@ -8,6 +8,6 @@
 	<body>
 		Html, Css
 		<hr />
-		
+		<img src="" />
 	</body>
 </html>

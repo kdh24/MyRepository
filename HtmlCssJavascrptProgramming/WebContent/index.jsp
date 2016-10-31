@@ -7,7 +7,7 @@
 		<title>index</title>
 	</head>
 	<body>
-		Html, Css, JavaScript 학습
+		Html, Css, JavaScript <!-- 학습 -->
 		<hr />
 		1. <a href="htmlcss/index.jsp">HTML/CSS </a><br />
 		2. <a href="javascript/index.jsp">vvJavaScript</a><br />
