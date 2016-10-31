@@ -40,7 +40,6 @@
 							<div>
 								<table style="width:100%; height:30px; background-color:black; opacity:0.5;">
 									<tr>
-										
 										<td style="text-align:left; color:white">${photoBoard.btitle}</td>
 										<td style="text-align:rigth; color:aqua;">${photoBoard.bhitcount}</td>
 									</tr>

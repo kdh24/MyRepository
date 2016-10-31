@@ -1,8 +1,10 @@
 package com.home.homeweb.controller;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.home.homeweb.dto.PhotoBoard;
 import com.home.homeweb.service.PhotoBoardService;
@@ -68,8 +71,39 @@ public class PhotoBoardController {
 		
 		return "photoboard/list";
 	}
+
+	@RequestMapping(value="/write", method=RequestMethod.GET)
+	public String write(){
+		return "photoboard/write";
+	}
 	
 
+	@RequestMapping(value="/write", method=RequestMethod.POST)
+	public String write(PhotoBoard photoBoard, HttpSession session){
+		try{
+			String mid = (String) session.getAttribute("login");
+			photoBoard.setBwriter(mid);
+			
+			photoBoard.setOriginalfile(photoBoard.getPhoto().getOriginalFilename());
+			
+			String savedfile = new Date().getTime() + photoBoard.getPhoto().getOriginalFilename();
+			
+			String realpath = session.getServletContext().getRealPath("/WEB-INF/photo/"+savedfile);
+
+			photoBoard.getPhoto().transferTo(new File(realpath));
+			photoBoard.setSavedfile(savedfile);
+			
+			photoBoard.setMimetype(photoBoard.getPhoto().getContentType());
+			
+			int result = photoBoardService.write(photoBoard);
+
+			return "redirect:/photoboard/list";
+		} catch(Exception e){
+			e.printStackTrace();
+			return "photoboard/write";
+		}
+	}
+	
 	@RequestMapping("/info")
 	public String info(int bno, Model model){
 		PhotoBoard photoBoard = photoBoardService.info(bno);
@@ -79,6 +113,44 @@ public class PhotoBoardController {
 		return "photoboard/info";
 	}
 
+	@RequestMapping(value="/modify", method=RequestMethod.GET)
+	public String modify(int bno, Model model) {
+		PhotoBoard photoBoard = photoBoardService.info(bno);
+		model.addAttribute("photoBoard", photoBoard);
+		return "photoboard/modify";
+	}
+	
+	@RequestMapping(value="/modify", method=RequestMethod.POST)
+	public String modify(PhotoBoard photoBoard, HttpSession session) {
+		try{
+			PhotoBoard dbPhotoBoard = photoBoardService.info(photoBoard.getBno());
+			photoBoard.setBhitcount(dbPhotoBoard.getBhitcount());
+			
+			photoBoard.setOriginalfile(photoBoard.getPhoto().getOriginalFilename());
+			
+			String savedfile = new Date().getTime() + photoBoard.getPhoto().getOriginalFilename();
+			
+			String realpath = session.getServletContext().getRealPath("/WEB-INF/photo/"+savedfile);
+
+			photoBoard.getPhoto().transferTo(new File(realpath));
+			photoBoard.setSavedfile(savedfile);
+			
+			photoBoard.setMimetype(photoBoard.getPhoto().getContentType());
+			
+			photoBoardService.modify(photoBoard);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		
+		return "redirect:/photoboard/list";
+	}
+	
+	@RequestMapping("/remove")
+	public String remove(int bno){
+		photoBoardService.remove(bno);
+		return "redirect:/photoboard/list";
+	}
+	
 	@RequestMapping("/showPhoto")
 	public void showPhoto(String savedfile, HttpServletRequest request, HttpServletResponse response){
 		try{

@@ -27,26 +27,27 @@
 		</c:if>
 		
 		<table style="width:600px; ">
-			<tr>
-				<td>
-					<c:forEach var="photoBoard" items="${list}">
-						<a href="info?bno=${photoBoard.bno}">
+		<tr>
+			<td><c:forEach var="photoBoard" items="${list}">
+					<a href="info?bno=${photoBoard.bno}">
 						<div style="width:120px; height:130px; background-color:red; margin:5px; display:inline-block; background-image:url(showPhoto?savedfile=${photoBoard.savedfile}); background-size:120px 130px;">
-							<span style="color:white; font-size:12px">${photoBoard.bdate}</span>
+							<div style="height: 100px;">
+								<span style="color: white; font-size: 12px">${photoBoard.bdate}</span>
+							</div>
+							<div>
+								<table style="width: 100%; height: 30px; background-color: black; opacity: 0.5;">
+									<tr>
+										<td style="text-align: left; color: white">${photoBoard.btitle}</td>
+										<td style="text-align: right; color: aqua">${photoBoard.bhitcount}</td>
+									</tr>
+								</table>
+							</div>
 						</div>
-						<div>
-							<table style="width:100%; height:30px; background-color:black; opacity:0.5;">
-								<tr>
-									<td style="text-align:left; color:white">${photoBoard.btitle}</td>
-									<td style="text-align:right; color:aqua">${photoBoard.bhitcount}</td>
-								</tr>
-							</table>
-						</div>
-						</a>
-					</c:forEach>
-				</td>
-			</tr>
-		</table>
+					</a>
+				</c:forEach>
+			</td>
+		</tr>
+	</table>
 		<div style="width: 600px">
 			<a href="list?pageNo=1">[처음]</a>
 			<c:if test="${groupNo>1}">

@@ -17,12 +17,11 @@ public class PhotoBoardDao {
 	private JdbcTemplate jdbcTemplate;
 	
 	public int insert(PhotoBoard photoboard){
-		String sql = "insert into photoboard(bno, btitle, bcontent, bwriter, bhitcount, bdate, originalfile, savedfile, mimetype) values(seq_photoboard_bno.nextval, ?, ?, ?, 0, sysdate)";
+		String sql = "insert into photoboard(bno, btitle, bcontent, bwriter, bhitcount, bdate, originalfile, savedfile, mimetype) values(seq_photoboard_bno.nextval, ?, ?, ?, 0, sysdate, ?, ?, ?)";
 		int row = jdbcTemplate.update(
 				sql,
 				photoboard.getBtitle(),
 				photoboard.getBcontent(),
-				photoboard.getBwriter(),
 				photoboard.getBwriter(),
 				photoboard.getOriginalfile(),
 				photoboard.getSavedfile(),
