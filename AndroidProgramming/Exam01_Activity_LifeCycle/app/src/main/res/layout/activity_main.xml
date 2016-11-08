@@ -13,5 +13,30 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="Hello World!"
+        android:id="@+id/textView" />
+
+    <Button
+        android:text="Show SecondActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="27dp"
+        android:id="@+id/btnSecond"
+        android:onClick="onClickBtnSecond" />
+
+    <Button
+        android:text="Show ThirdActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnSecond"
+        android:layout_alignLeft="@+id/btnSecond"
+        android:layout_alignStart="@+id/btnSecond"
+        android:layout_marginTop="19dp"
+        android:id="@+id/btnThird"
+        android:onClick="onClickBtnThird" />
 </RelativeLayout>
