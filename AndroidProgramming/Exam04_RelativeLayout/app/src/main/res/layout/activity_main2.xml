@@ -42,7 +42,7 @@
                     android:background="@drawable/btn_list_img"/>
 
                 <TextView
-                    android:text="리뷰"
+                    android:text="목록"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
@@ -62,10 +62,33 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:textOff=""
-                    android:background="@drawable/btn_list_img"/>
+                    android:background="@drawable/btn_review_img"/>
 
                 <TextView
                     android:text="리뷰"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textStyle="normal|bold"
+                    android:textColor="@color/colorAccent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center" >
+
+                <ToggleButton
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:textOff=""
+                    android:background="@drawable/btn_location_img"/>
+
+                <TextView
+                    android:text="위치"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
