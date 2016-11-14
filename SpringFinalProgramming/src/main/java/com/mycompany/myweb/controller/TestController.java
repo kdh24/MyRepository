@@ -5,5 +5,6 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class TestController {
 	//Test1
+	//Test2
 	//Test3
 }
