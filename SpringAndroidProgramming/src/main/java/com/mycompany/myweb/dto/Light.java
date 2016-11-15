@@ -5,7 +5,7 @@ public class Light {
     private String imageLarge;
     private String title;
     private String content;
-
+ 
 	public Light() {}
 	
     public Light(String image, String imageLarge, String title, String content) {
