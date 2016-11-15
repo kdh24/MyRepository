@@ -1,0 +1,135 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7BB539AF-060C-AC79-FF16-7FB29D3D9BFD" name="photoboard">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-26 00:32:10 UTC</createdTime>
+<ownerDesignName>DB모델링</ownerDesignName>
+<ordsAlias>table_3</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="bno" id="6BC0DACB-BDF4-1570-52B9-55F2FA31BF40">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-26 00:49:32 UTC</createdTime>
+<ownerDesignName>DB모델링</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="btitle" id="6F7FBB38-977F-9A9A-D077-29759049EACA">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-26 00:49:32 UTC</createdTime>
+<ownerDesignName>DB모델링</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="bcontent" id="A928D043-B9FE-26F2-9822-06DAFED583C9">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-26 00:49:32 UTC</createdTime>
+<ownerDesignName>DB모델링</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT028</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="bwriter" id="8697757B-49B1-01F6-7978-665A428C721D">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-26 00:49:32 UTC</createdTime>
+<ownerDesignName>DB모델링</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B3D22BB8-A87E-1FB4-EC02-14BAEF6D7802" referredColumn="F87F15A5-D955-34F3-A8C4-DAE2E65E7CE3"/>
+</associations>
+</Column>
+<Column name="bhitcount" id="0C944884-ECFF-A49E-DFF3-D52B16B0A000">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-26 00:49:32 UTC</createdTime>
+<ownerDesignName>DB모델링</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="bdate" id="74BA2FD9-41D6-7524-3EBC-402C67C21B46">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-26 00:49:32 UTC</createdTime>
+<ownerDesignName>DB모델링</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="originalfile" id="82D33367-FFAC-1284-1199-A299D66C8544">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-26 00:49:32 UTC</createdTime>
+<ownerDesignName>DB모델링</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="savedfile" id="A1E70396-DAA7-9B41-6E93-E8C8542D6C8C">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-26 00:49:32 UTC</createdTime>
+<ownerDesignName>DB모델링</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="mimetype" id="062E2578-DA15-AAF1-F9D0-8B92A1AF6403">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-26 00:49:32 UTC</createdTime>
+<ownerDesignName>DB모델링</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="03124038-48D1-0BCE-866F-9D64E5ECE068" name="photoboard_PK">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-26 03:26:01 UTC</createdTime>
+<ownerDesignName>DB모델링</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6BC0DACB-BDF4-1570-52B9-55F2FA31BF40"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="090DCC40-695B-81C7-3E01-858C2A83E105" name="photoboard_member_FK">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-26 03:26:30 UTC</createdTime>
+<ownerDesignName>DB모델링</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8697757B-49B1-01F6-7978-665A428C721D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

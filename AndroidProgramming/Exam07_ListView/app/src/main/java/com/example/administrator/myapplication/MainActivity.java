@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         lightList = (ListView)findViewById(R.id.lightView);
-
         fillItems();
     }
 

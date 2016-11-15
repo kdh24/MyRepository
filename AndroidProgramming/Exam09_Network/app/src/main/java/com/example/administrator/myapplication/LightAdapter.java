@@ -48,7 +48,7 @@ public class LightAdapter extends BaseAdapter {
         //data setting
         Light light = list.get(position);
         ImageView lightImage = (ImageView) convertView.findViewById(R.id.lightImage);
-        lightImage.setImageResource(light.getImage());
+        lightImage.setImageBitmap(light.getImage());
 
         TextView lightTitle = (TextView) convertView.findViewById(R.id.lightTitle);
         lightTitle.setText(light.getTitle());
