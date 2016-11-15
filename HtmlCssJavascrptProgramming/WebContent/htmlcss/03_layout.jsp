@@ -45,7 +45,7 @@ article {
 
 <div class="container">
 
-<header style="background-color:yellow">
+<header >
    <h1>City Gallery</h1>
 </header>
   
@@ -57,13 +57,13 @@ article {
   </ul>
 </nav>
 
-<article style="background-color:yellow">
+<article >
   <h1>London</h1>
   <p>London is the capital city of England. It is the most populous city in the  United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
   <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p>
 </article>
 
-<footer style="background-color:yellow">Copyright © W3Schools.com</footer>
+<footer >Copyright © W3Schools.com</footer>
 
 </div>
 
