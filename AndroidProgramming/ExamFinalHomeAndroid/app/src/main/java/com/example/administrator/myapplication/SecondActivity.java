@@ -41,7 +41,6 @@ import static android.R.id.list;
 
 public class SecondActivity extends AppCompatActivity {
     private ImageView imageLarge;
-    private Button button2;
     private ListView foodList;
     private List<Food> list;
     private FoodAdapter foodAdapter;
@@ -52,15 +51,6 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.activity_second);
 
         imageLarge = (ImageView) findViewById(R.id.imageLarge);
-
-        button2 = (Button) findViewById(R.id.button2);
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SecondActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
 
         foodList = (ListView) findViewById(R.id.foodView);
         foodList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -92,7 +82,7 @@ public class SecondActivity extends AppCompatActivity {
             public void run() {
                 URL url = null;
                 try {
-                    url = new URL("http://192.168.0.46:8080/myandroid/foodList");
+                    url = new URL("http://192.168.0.50:8080/myandroid/foodList");
                     HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                     conn.connect();
 
@@ -159,7 +149,7 @@ public class SecondActivity extends AppCompatActivity {
         Bitmap bitmap = null;
         URL url = null;
         try {
-            url = new URL("http://192.168.0.46:8080/myandroid/getImage?fileName=" + fileName);
+            url = new URL("http://192.168.0.50:8080/myandroid/getImage?fileName=" + fileName);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.connect();
 

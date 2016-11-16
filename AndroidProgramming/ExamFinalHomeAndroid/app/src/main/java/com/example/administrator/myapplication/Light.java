@@ -1,33 +1,49 @@
 package com.example.administrator.myapplication;
 
+import android.graphics.Bitmap;
+
 public class Light {
-    private int image;
-    private int imageLarge;
+    private Bitmap image;
+    private Bitmap imageLarge;
+    private String imageFileName;
+    private String imageLargeFileName;
     private String title;
     private String content;
 
-    public Light() {}
-
-    public Light(int image, int imageLarge, String title, String content) {
+    public Light(Bitmap image, Bitmap imageLarge, String title, String content) {
         this.image = image;
         this.imageLarge = imageLarge;
         this.title = title;
         this.content = content;
     }
 
+    public String getImageFileName() {
+        return imageFileName;
+    }
 
+    public void setImageFileName(String imageFileName) {
+        this.imageFileName = imageFileName;
+    }
 
-    public int getImage() {
+    public String getImageLargeFileName() {
+        return imageLargeFileName;
+    }
+
+    public void setImageLargeFileName(String imageLargeFileName) {
+        this.imageLargeFileName = imageLargeFileName;
+    }
+
+    public Bitmap getImage() {
         return image;
     }
 
-    public void setImage(int image) {
+    public void setImage(Bitmap image) {
         this.image = image;
     }
 
-    public int getImageLarge() { return imageLarge; }
+    public Bitmap getImageLarge() { return imageLarge; }
 
-    public void setImageLarge(int imageLarge) { this.imageLarge = imageLarge; }
+    public void setImageLarge(Bitmap imageLarge) { this.imageLarge = imageLarge; }
 
     public String getContent() {
         return content;

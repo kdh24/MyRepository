@@ -5,7 +5,7 @@ import android.graphics.Bitmap;
 public class Food {
     private Bitmap image;
     private Bitmap imageLarge;
-    private  String imageFileName;
+    private String imageFileName;
     private String imageLargeFileName;
     private String title;
     private String price;
