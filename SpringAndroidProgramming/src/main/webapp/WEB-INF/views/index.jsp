@@ -10,5 +10,6 @@
   <body>
 		index.jsp
 		<hr />
+		<img src="./?action=stream" />
   </body>
 </html>
